@@ -1,0 +1,219 @@
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(120deg, #1e1e1e, #343a40);
+  min-height: 100vh;
+  color: #fff;
+}
+
+.card {
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.btn-custom {
+  background: #ffc107;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-custom:hover {
+  background: #e0a800;
+}
+
+:root {
+  --primary-blue: #007bff;
+  --orange: #ffc107;
+  --bg-light: #f4f7f6;
+  --text-dark: #333;
+  --success: #28a745;
+}
+
+.card {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Header ve Filtre Alanı */
+.card-header {
+  background-color: var(--orange);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header-title {
+  color: black;
+  margin: 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Modern Segmented Control (Filtreler) */
+/* Filtre Kapsayıcısı */
+.filter-container {
+  background: rgba(0, 0, 0, 0.1);
+  /* Mavi bar üzerinde hafif derinlik */
+  padding: 3px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Radio Input'ları Gizle */
+.btn-check {
+  display: none;
+}
+
+/* Label'ları (Buton Görünümlü) Şıklaştır */
+.filter-btn {
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+  user-select: none;
+}
+
+/* Hover Efekti */
+.filter-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* SEÇİLİ DURUM (Magic Touch) */
+/* Radio check edildiğinde bir sonraki label'ı beyaz kutu yap */
+.btn-check:checked + .filter-btn {
+  background-color: #ffffff;
+  color: #007bff;
+  /* Kart başlığıyla aynı mavi */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+
+/* İki grup arasındaki ayırıcı çizgi */
+.filter-divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 0 8px;
+}
+
+/* Tablo Alanı */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table-blue {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+th {
+  background: #fafafa;
+  color: #666;
+  font-weight: 500;
+  padding: 15px 24px;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+}
+
+td {
+  padding: 15px 24px;
+  border-bottom: 1px solid #f9f9f9;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+/* Tablo Durum Badge'leri */
+.badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge-blue {
+  background: #e7f3ff;
+  color: #007bff;
+}
+
+.badge-status {
+  background: #d4edda;
+  color: #155724;
+}
+
+.amount {
+  font-weight: 600;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Ödendi: Yumuşak yeşil arka plan ve koyu yeşil nokta */
+.status-paid {
+  background-color: #e6f4ea;
+  color: #1e7e34;
+}
+
+.status-paid::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #28a745;
+  border-radius: 50%;
+}
+
+/* Ödenmedi: Yumuşak kırmızı arka plan ve koyu kırmızı nokta */
+.status-unpaid {
+  background-color: #fce8e6;
+  color: #d93025;
+}
+
+.status-unpaid::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #d93025;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+}
